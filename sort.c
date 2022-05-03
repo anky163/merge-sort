@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 
     const int LENGTH = count;
     sort(array, LENGTH);
-    for (int i = 0; i < count; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         printf("%i\n", array[i]);
     }
