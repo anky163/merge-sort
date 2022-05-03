@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <math.h>
 
 int allocate(int length, int side);
 void divide(int array[], int left[], int right[], int length);
