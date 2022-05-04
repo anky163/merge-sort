@@ -1,15 +1,31 @@
 #include <stdio.h>
-#include <math.h>
+#include <string.h>
+
 
 int allocate(int length, int side);
 void divide(int array[], int left[], int right[], int length);
 void rearrange(int subs_array[], int left[], int right[], int length);
 void sort(int array[], int length);
 void swap(int *ptr1, int *ptr2);
+int exponentiation(int a, int b);
 
-int turn_to_number(char *word);
-
-
+int turn_to_number(char *word)
+{
+    int number = 0;
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        if (word[i] != '-')
+        {
+            int m = ((int) word[i] - 48) * exponentiation(10, (n - 1 - i));
+            number += m;
+        }
+    }
+    if (word[0] == '-')
+    {
+        number *= -1;
+    }
+    return number;
+}
 
 /*
 int main(void)
@@ -129,12 +145,6 @@ void rearrange(int subs_array[], int left[], int right[], int length)
 
 void sort(int array[], int length)
 {
-    int left_count = allocate(length, -1);
-    int right_count = allocate(length, 1);
-
-    int left[left_count];
-    int right[right_count];
-
     // base case
     if (length == 1)
     {
@@ -152,6 +162,12 @@ void sort(int array[], int length)
             return;
         }
     }
+
+    int left_count = allocate(length, -1);
+    int right_count = allocate(length, 1);
+
+    int left[left_count];
+    int right[right_count];
 
     // divide array into 2 halves
     divide(array, left, right, length);
@@ -178,24 +194,16 @@ void swap(int *ptr1, int *ptr2)
 }
 
 
-
-int turn_to_number(char *word)
+int exponentiation(int a, int b)
 {
-    int number = 0;
-    for (int i = 0, n = strlen(word); i < n; i++)
+    int result = 1;
+    for (int i = 0; i < b; i++)
     {
-        if (word[i] != '-')
-        {
-            int m = ((int) word[i] - 48) * pow(10, (n - 1 - i));
-            number += m;
-        }
+        result *= a;
     }
-    if (word[0] == '-')
-    {
-        number *= -1;
-    }
-    return number;
+    return result;
 }
+
 
 
 
