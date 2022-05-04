@@ -8,7 +8,7 @@
 - Click inside of that terminal window and type: 
     **cd project**
 - then execute:
-    **cc sort.c -o sort -lm**
+    **make sort**
 - then type:
     **./sort [text_file.txt]**
 - You can also check the running time of this program (maybe to compare with CS50 lab3's versions if you like) by running:
