@@ -85,10 +85,13 @@ int main(int argc, char *argv[])
     fclose(open);
 
     const int LENGTH = count;
+
     sort(array, LENGTH);
+   
     for (int i = 0; i < LENGTH; i++)
     {
         printf("%i\n", array[i]);
     }
+  
     return 0;
 }
