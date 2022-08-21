@@ -90,8 +90,8 @@ int main(int argc, char *argv[])
    
     for (int i = 0; i < LENGTH; i++)
     {
-        printf("%i\n", array[i]);
+        printf("%i ", array[i]);
     }
-  
+    printf("\n");
     return 0;
 }
